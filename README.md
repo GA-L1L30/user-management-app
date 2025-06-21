@@ -1,8 +1,10 @@
+DEMO URL : https://drive.google.com/file/d/1qzzxyCl-xrwwniJFkX-lFJWOOasoeb8m/view?usp=sharing
+
+public access!!
 
 Project Overview
 
 ->This project successfully tackles all core requirements and many bonus features of the challenge. I've focused on building a robust application with a clean architecture and leveraging modern Angular features, including Signals, for optimal performance and reactivity.
-
 
 Key Features & Implementations
 
@@ -10,12 +12,11 @@ Core Functionality
 
 ->User Management: The application provides a comprehensive interface for managing users, fulfilling the primary objective of the challenge.
 
-
 Advanced UI & Component Architecture
 
 ->I've gone beyond the basic requirements to deliver a polished and user-friendly experience:
 
-->Elaborate UI Design: The application boasts a highly detailed and professional user interface, reminiscent of a real-world social or professional networking platform. 
+->Elaborate UI Design: The application boasts a highly detailed and professional user interface, reminiscent of a real-world social or professional networking platform.
 
 This includes:
 
@@ -26,7 +27,6 @@ This includes:
 ->Informative header cards (sub-header-info-cards.component.ts) for key insights.
 
 ->Advanced Component Structure: The project adheres to best practices for maintainability and scalability by breaking down the application into many small, highly reusable components (e.g., navbar, spinner, footer-paginator).
-
 
 Enhanced User Experience & Utilities
 
