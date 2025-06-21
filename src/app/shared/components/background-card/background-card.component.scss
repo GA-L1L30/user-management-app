@@ -1,9 +1,9 @@
 @use 'styles' as *;
 
 mat-card {
-  background-color: #F9FAFB;
+  background-color: $base-background-color-white1;
   border-radius: 10px;
-  border: 1px solid #F3F8FF;
+  border: 1px solid $base-background-color-white2;
   box-shadow: unset
 }
 

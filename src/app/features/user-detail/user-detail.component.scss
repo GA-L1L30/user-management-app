@@ -81,7 +81,7 @@
         display: block;
         margin-bottom: 8px;
         font-weight: 500;
-        color: #333;
+        color: $base-dark-black-1;
       }
 
       app-background-card {
@@ -103,7 +103,7 @@
 
           .detail-value {
             font-size: 14px;
-            color: #333;
+            color: $base-dark-black-1;
 
             &.with-icon {
               display: flex;
@@ -116,7 +116,7 @@
                 height: 0;
                 border-left: 5px solid transparent;
                 border-right: 5px solid transparent;
-                border-top: 5px solid #666;
+                border-top: 5px solid $base-light-black-1;
               }
             }
           }
@@ -141,7 +141,7 @@
   h2 {
     font-size: 18px;
     font-weight: 500;
-    color: #333;
+    color: $base-dark-black-4;
     margin-bottom: 16px;
   }
 
@@ -163,7 +163,7 @@
 
       .cat-name {
         font-size: 14px;
-        color: #555;
+        color: $base-dark-black-4;
         margin: 0;
       }
     }
@@ -174,8 +174,8 @@
   text-align: right;
 
   .add-friend-btn {
-    background-color: #eaf2fa;
-    color: #2c6eb5;
+    background-color: $base-light-Blue-3;
+    color: $base-dark-Blue-1;
     border: none;
     padding: 10px 16px;
     font-size: 14px;
@@ -185,7 +185,7 @@
     transition: background-color 0.2s;
 
     &:hover {
-      background-color: #d8e6f5;
+      background-color: $base-light-Blue-1;
     }
   }
 }
@@ -224,5 +224,4 @@
   display: flex;
   gap: 16px;
   justify-self: right;
-
 }
