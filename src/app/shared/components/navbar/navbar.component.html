@@ -1,0 +1,32 @@
+<App-background-card [customStyle]="{ width: '1396px', height: '54px' }">
+  <nav class="navbar-container">
+    <div class="navbar-content">
+      <div class="right-section">
+        <a class="nav-item" routerLink="/home">
+          <mat-icon [matBadge]="users().length" matBadgeColor="warn">home</mat-icon>
+          <span>Home</span>
+        </a>
+        <a class="nav-item">
+          <mat-icon>group</mat-icon>
+          <span>Friends</span>
+        </a>
+        <a class="nav-item">
+          <mat-icon>work</mat-icon>
+          <span>Cats</span>
+        </a>
+        <a class="nav-item">
+          <mat-icon>message</mat-icon>
+          <span>Messages</span>
+        </a>
+        <a class="nav-item">
+          <mat-icon>notifications</mat-icon>
+          <span>Notifications</span>
+        </a>
+        <a class="nav-item">
+          <mat-icon>account_circle</mat-icon>
+          <span>Profile</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+</App-background-card>

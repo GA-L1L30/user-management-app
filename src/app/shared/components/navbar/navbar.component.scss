@@ -1,0 +1,62 @@
+@use 'styles' as s;
+
+.login-container {
+  background-color: s.$base-background-color-white1;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+
+}
+
+.navbar-content {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  padding-right: 315px;
+  width: 100%;
+  max-width: 1396px;
+  height: 54px;
+}
+
+.right-section {
+  display: flex;
+  gap: 30px;
+  text-align: center;
+
+  .nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: s.$base-light-black-1;
+    font-size: 0.8rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+
+    mat-icon {
+      font-size: 24px;
+      width: 31px;
+      height: 24px;
+      margin-bottom: 4px;
+    }
+
+    &:hover {
+      color: s.$base-dark-Blue-1;
+    }
+  }
+}
+
+span {
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 100%;
+  letter-spacing: 0px;
+  text-align: center;
+  color: s.$base-light-black-1;
+}

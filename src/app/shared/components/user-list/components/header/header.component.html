@@ -1,0 +1,35 @@
+<div class="custom-header-bar">
+  <div class="custom-search-group">
+    <input type="text" class="custom-search-input" placeholder="Find people" [(ngModel)]="searchTerm"
+           (keyup.enter)="search.emit()">
+    <button class="custom-search-btn" (click)="search.emit()">SEARCH</button>
+  </div>
+  <div class="custom-date-filters">
+    <div class="custom-date-field">
+      <label class="custom-date-label">Date from</label>
+      <div class="custom-date-wrapper">
+        <input type="date" class="custom-date-input" [ngModel]="dateFrom" (ngModelChange)="dateFromChange.emit($event)">
+        <button class="custom-clear-btn" type="button" (click)="dateFromChange.emit('')">
+          <span class="custom-clear-circle">
+            <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#E0E3E7"/><path
+              d="M5.5 5.5L10.5 10.5M10.5 5.5L5.5 10.5" stroke="#90A4AE" stroke-width="1.5"
+              stroke-linecap="round"/></svg>
+          </span>
+        </button>
+      </div>
+    </div>
+    <div class="custom-date-field">
+      <label class="custom-date-label">Date To</label>
+      <div class="custom-date-wrapper">
+        <input type="date" class="custom-date-input" [ngModel]="dateTo" (ngModelChange)="dateToChange.emit($event)">
+        <button class="custom-clear-btn" type="button" (click)="dateToChange.emit('')">
+          <span class="custom-clear-circle">
+            <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#E0E3E7"/><path
+              d="M5.5 5.5L10.5 10.5M10.5 5.5L5.5 10.5" stroke="#90A4AE" stroke-width="1.5"
+              stroke-linecap="round"/></svg>
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

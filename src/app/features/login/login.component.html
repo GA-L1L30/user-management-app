@@ -1,0 +1,57 @@
+<div class="login-container">
+  <div class="top-intro">
+    <img src="/images/gato_app.png" alt="LogoGato" class="logo-container"/>
+    <div class="title-cat">CHARLIE'S CAT LOVERS CLUB</div>
+    <div class="welcome-title">Welcome Back</div>
+    <p class="info-title">Enter your username and password to sign in</p>
+  </div>
+
+  <form [formGroup]="loginForm" (ngSubmit)="login()">
+    <span>Username</span>
+    <mat-form-field appearance="outline" class="full-width">
+      <input matInput
+             formControlName="username"
+             placeholder="Your username"
+             [class.mat-form-field-invalid]="hasError('username', 'required')"/>
+      <mat-error *ngIf="hasError('username', 'required')">
+        {{ getErrorMessage('username') }}
+      </mat-error>
+    </mat-form-field>
+
+    <span>Password</span>
+    <mat-form-field appearance="outline" class="full-width">
+      <input matInput
+             [type]="showPassword() ? 'text' : 'password'"
+             formControlName="password"
+             placeholder="Your password"
+             [class.mat-form-field-invalid]="hasError('password', 'required')"/>
+      <mat-error *ngIf="hasError('password', 'required')">
+        {{ getErrorMessage('password') }}
+      </mat-error>
+    </mat-form-field>
+    <mat-slide-toggle
+      [(ngModel)]="showPassword"
+      [ngModelOptions]="{standalone: true}"
+      color="warn"
+      class="login-toggle">
+      Show password
+    </mat-slide-toggle>
+
+    <div *ngIf="error()" class="error-message">
+      {{ error() }}
+    </div>
+
+    <button mat-raised-button
+            color="primary"
+            type="submit"
+            class="login-btn full-width"
+            [disabled]="loginForm.invalid">
+      {{ loading() ? 'SIGNING IN...' : 'SIGN IN' }}
+    </button>
+  </form>
+
+  <div class="support-text">
+    Having trouble signing in?
+    <a [routerLink]="'/support'" class="support-link">Contact Support</a>
+  </div>
+</div>

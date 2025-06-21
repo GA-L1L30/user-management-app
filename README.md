@@ -1,59 +1,39 @@
-# UserManagementApp
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.8.
+Project Overview
 
-## Development server
+->This project successfully tackles all core requirements and many bonus features of the challenge. I've focused on building a robust application with a clean architecture and leveraging modern Angular features, including Signals, for optimal performance and reactivity.
 
-To start a local development server, run:
 
-```bash
-ng serve
-```
+Key Features & Implementations
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Core Functionality
 
-## Code scaffolding
+->User Management: The application provides a comprehensive interface for managing users, fulfilling the primary objective of the challenge.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
 
-```bash
-ng generate component component-name
-```
+Advanced UI & Component Architecture
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+->I've gone beyond the basic requirements to deliver a polished and user-friendly experience:
 
-```bash
-ng generate --help
-```
+->Elaborate UI Design: The application boasts a highly detailed and professional user interface, reminiscent of a real-world social or professional networking platform. 
 
-## Building
+This includes:
 
-To build the project run:
+->A dedicated side-information panel (side-info.component.ts) for supplementary content.
 
-```bash
-ng build
-```
+->Custom-styled cards (background-card.component.ts) to enhance visual presentation.
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+->Informative header cards (sub-header-info-cards.component.ts) for key insights.
 
-## Running unit tests
+->Advanced Component Structure: The project adheres to best practices for maintainability and scalability by breaking down the application into many small, highly reusable components (e.g., navbar, spinner, footer-paginator).
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
 
-```bash
-ng test
-```
+Enhanced User Experience & Utilities
 
-## Running end-to-end tests
+To further improve the application, I've incorporated several features not explicitly requested:
 
-For end-to-end (e2e) testing, run:
+->Local Storage for State Persistence: The home-page.component.ts intelligently uses localStorage to persist the selected user. This enhances the user experience by remembering their last selection across page reloads.
 
-```bash
-ng e2e
-```
+->Custom Pipes: I've developed custom Angular pipes, including capitalize.pipe.ts and compact-number.pipe.ts, demonstrating a thorough understanding of Angular's pipe system for data transformation.
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+->GoBack() event on (user-detail.component.ts) to nagivate to list again.

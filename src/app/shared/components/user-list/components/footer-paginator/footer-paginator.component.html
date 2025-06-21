@@ -1,0 +1,31 @@
+<div class="user-list-footer">
+  <div class="rows-per-page-custom">
+    <span class="rows-label">Rows per page</span>
+    <mat-select class="rows-dropdown" [ngModel]="resultsPerPage" (ngModelChange)="resultsPerPageChange.emit($event)">
+      <mat-option *ngFor="let option of rowsPerPageOptions" [value]="option">{{ option }}</mat-option>
+    </mat-select>
+    <span class="rows-total">of {{ totalRows }} rows</span>
+  </div>
+  <div class="pagination-controls">
+    <button mat-icon-button class="circle-btn" (click)="goToFirstPage.emit()" [disabled]="currentPage === 1">
+      <span>&laquo;</span>
+    </button>
+    <button mat-icon-button class="circle-btn" (click)="previousPage.emit()" [disabled]="currentPage === 1">
+      <span>&lsaquo;</span>
+    </button>
+    <ng-container *ngFor="let page of visiblePages">
+      <button mat-icon-button class="circle-btn"
+              [ngClass]="{'active-page': page === currentPage, 'ellipsis': page === '...'}"
+              (click)="goToPage.emit(page)" [disabled]="page === '...'">
+        <span *ngIf="page !== '...'">{{ page }}</span>
+        <span *ngIf="page === '...'">...</span>
+      </button>
+    </ng-container>
+    <button mat-icon-button class="circle-btn" (click)="nextPage.emit()" [disabled]="currentPage === totalPages">
+      <span>&rsaquo;</span>
+    </button>
+    <button mat-icon-button class="circle-btn" (click)="goToLastPage.emit()" [disabled]="currentPage === totalPages">
+      <span>&raquo;</span>
+    </button>
+  </div>
+</div>

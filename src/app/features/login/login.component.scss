@@ -1,0 +1,123 @@
+@use 'styles' as *;
+@use 'sass:map';
+
+$normal-text: (
+  font-family: Roboto,
+  font-weight: 700,
+  font-size: 14px,
+  line-height: 140%,
+  letter-spacing: 0,
+  text-align: center
+);
+
+@mixin text-style($style) {
+  font-family: map.get($style, font-family);
+  font-weight: map.get($style, font-weight);
+  font-size: map.get($style, font-size);
+  line-height: map.get($style, line-height);
+  letter-spacing: map.get($style, letter-spacing);
+  text-align: map.get($style, text-align);
+}
+
+.login-container {
+  max-width: 490px;
+  margin: auto;
+  background: $base-background-color-white1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100%;
+
+  .top-intro {
+    padding-bottom: 23px;
+  }
+
+  .logo-container {
+    width: 187px;
+    height: 154.3px;
+    margin-bottom: 1.5rem;
+  }
+
+  form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.2rem;
+
+    .full-width {
+      width: 100%;
+      border-radius: 15px;
+    }
+
+    .login-btn {
+      width: 100%;
+      height: 44px;
+      border-radius: 12px;
+      background: $base-dark-Blue-1;
+      @include text-style($normal-text);
+      vertical-align: middle;
+      color: $base-background-color-white1;
+    }
+
+    .login-toggle {
+      text-align: left;
+      padding: 2rem 0;
+    }
+
+    span {
+      @include text-style($normal-text);
+      font-weight: 400;
+      color: $base-dark-black-2;
+      padding: 16px 0 6px;
+      text-align: left;
+    }
+  }
+
+  .support-text {
+    @include text-style($normal-text);
+    font-weight: 400;
+    color: $base-light-black-3;
+
+    .support-link {
+      @include text-style($normal-text);
+      font-weight: 700;
+      color: $base-light-green-info;
+      text-decoration: none;
+    }
+  }
+}
+
+.title-cat {
+  font-family: Nunito;
+  font-weight: 900;
+  font-size: 48px;
+  line-height: 100%;
+  text-align: center;
+  color: $base-dark-Blue-1;
+  padding-bottom: 11px;
+}
+
+.welcome-title {
+  font-family: Roboto;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 130%;
+  text-align: center;
+  color: $base-dark-Blue-1;
+}
+
+.info-title {
+  @include text-style($normal-text);
+  color: $base-light-black-3;
+}
+
+:host ::ng-deep .mdc-switch__track::after {
+  background-color: $base-dark-Blue-1 !important;
+}
+
+.mat-mdc-form-field-subscript-wrapper {
+  padding-bottom: 14px !important;
+}

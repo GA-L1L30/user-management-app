@@ -1,0 +1,15 @@
+@use 'styles' as *;
+
+mat-card {
+  background-color: #F9FAFB;
+  border-radius: 10px;
+  border: 1px solid #F3F8FF;
+  box-shadow: unset
+}
+
+mat-card-content {
+  padding: 0 !important;
+  height: 100%;
+  align-content: center;
+}
+

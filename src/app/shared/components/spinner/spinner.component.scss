@@ -1,0 +1,17 @@
+.loading-spinner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+
+  .spinner-text {
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+  }
+}
+

@@ -1,0 +1,218 @@
+@use 'styles' as *;
+
+@mixin text-base(
+  $size: 12px,
+  $weight: 400,
+  $lh: 150%,
+  $color: $base-dark-black-1,
+  $family: Roboto
+) {
+  font-family: $family, Arial, sans-serif;
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $lh;
+  letter-spacing: 0;
+  color: $color;
+}
+
+@mixin flex-row($justify: space-between, $align: center) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin flex-column($align: flex-start) {
+  display: flex;
+  flex-direction: column;
+  align-items: $align;
+}
+
+
+.profile-section,
+.side-info-content {
+  @include text-base();
+  padding-inline: 10px;
+}
+
+.profile-section {
+  @include flex-column(center);
+  padding: 24px 12px 12px;
+
+  .avatar-subtitle {
+    gap: 5px;
+    padding-block: 20px;
+  }
+}
+
+.avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 12px;
+  border: 4px solid #f3f6fa;
+}
+
+.profile-name {
+  @include text-base(16px, 700, null, $base-dark-black-1);
+  margin-bottom: 2px;
+  text-align: center;
+  letter-spacing: 0.2px;
+}
+
+.profile-desc {
+  @include text-base(13px, 400, 1.2, #1976d2);
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.profile-link {
+  @include text-base(12px, 400, 150%, $base-dark-Blue-1);
+  text-align: center;
+}
+
+.profile-contacts-row {
+  @include flex-column();
+  width: 100%;
+  margin-bottom: 2px;
+}
+
+.profile-contacts,
+.profile-views-link {
+  @include flex-row();
+  width: 100%;
+  @include text-base(13px, 400, null, $base-dark-Blue-1);
+  margin-bottom: 0;
+}
+
+.contacts-extra {
+  @include text-base(12px, 400, 150%, $base-dark-black-3);
+  margin-block: 2px;
+}
+
+.profile-views-row {
+  @include flex-row();
+  width: 100%;
+  @include text-base(13px);
+  margin-block: 9px;
+}
+
+.views-value {
+  color: #1976d2;
+  font-weight: 500;
+  margin-left: 4px;
+}
+
+.catnip-section {
+  width: 100%;
+  margin-bottom: 6px;
+  @include text-base(13px);
+}
+
+.catnip-label {
+  @include text-base(12px, 400, 150%, $base-dark-Blue-1);
+}
+
+.catnip-link {
+  @include text-base(12px, 400, 100%, $base-dark-black-3);
+  text-decoration: underline;
+}
+
+.my-elements {
+  width: 100%;
+  margin-bottom: 2px;
+}
+
+.my-elements-link {
+  color: $base-dark-Blue-1;
+  display: flex;
+  gap: 10px;
+
+  div {
+    @include text-base();
+  }
+
+  .link-image {
+    display: contents;
+  }
+}
+
+.side-info-content {
+  padding: 24px 12px 12px;
+}
+
+.section-title {
+  @include text-base(12px, 400, 150%, $base-dark-Blue-1);
+}
+
+.latest-section ul,
+.groups-section ul {
+  padding-left: 18px;
+  margin: 0;
+}
+
+.latest-section {
+  padding-bottom: 64px;
+}
+
+.latest-section li {
+  @include text-base(13px);
+  margin-bottom: 4px;
+  color: #222;
+}
+
+.group-emoji {
+  margin-right: 4px;
+}
+
+.groups-section {
+  @include text-base(12px, 400, 150%, $base-dark-Blue-1);
+  text-decoration: none;
+}
+
+.groups-section ul {
+  margin-bottom: 0;
+}
+
+.show-more {
+  @include text-base(13px, 400, 150%, $base-light-black-2);
+  margin-top: 2px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  padding-block: 15px;
+}
+
+.arrow {
+  @include text-base(12px);
+  margin-left: 2px;
+}
+
+.events-section {
+  @include text-base(12px, 400, 150%, $base-dark-Blue-1);
+  text-align: left;
+  padding-bottom: 2px;
+}
+
+.events-row {
+  @include flex-row();
+  margin-bottom: 2px;
+}
+
+.add-event {
+  @include text-base(18px, 600, null, #1976d2);
+  cursor: pointer;
+}
+
+.search-section {
+  text-align: center;
+  padding: 10px 0 2px 0;
+}
+
+.search-link {
+  @include text-base(14px, 400, 150%, $base-dark-Blue-1);
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}

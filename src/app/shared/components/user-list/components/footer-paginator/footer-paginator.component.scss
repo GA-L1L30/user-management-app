@@ -1,0 +1,110 @@
+@use 'styles' as q;
+
+.user-list-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+
+  .rows-per-page-custom {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+    color: #14477b;
+
+
+    .rows-label,
+    .rows-total,
+    .rows-dropdown {
+      font-family: Roboto;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 100%;
+      letter-spacing: 0;
+      min-width: fit-content;
+      color: q.$base-dark-Blue-1;
+    }
+
+
+    .rows-dropdown {
+      min-width: 48px;
+      max-width: 60px;
+      padding-right: 6px;
+      padding-left: 6px;
+      height: 32px;
+      border-radius: 18px;
+      background: q.$base-background-color-white1;
+      place-content: center;
+      border: 1px solid q.$base-light-black-4;
+
+      ::ng-deep .mat-select-trigger {
+        color: #14477b;
+        font-weight: 600;
+        font-size: 14px;
+        padding-left: 8px;
+      }
+
+      ::ng-deep .mat-select-arrow {
+        color: #14477b;
+      }
+
+      ::ng-deep .mat-select-value {
+        color: #14477b;
+      }
+    }
+  }
+
+  .pagination-controls {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    .circle-btn {
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      background: q.$base-background-color-white1;
+      color: q.$base-dark-Blue-1;
+      border: 1px solid q.$base-light-black-5;
+
+      font-weight: 500;
+      transition: background 0.2s, color 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+
+      &.active-page {
+        background: #14477b;
+        color: #fff;
+      }
+
+      &.ellipsis {
+        background: transparent;
+        color: q.$base-dark-Blue-1;
+        cursor: default;
+        pointer-events: none;
+      }
+
+      span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        font-size: 15px;
+        line-height: 1;
+        font-family: Roboto;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 100%;
+        letter-spacing: 0;
+      }
+    }
+
+    span {
+      font-weight: 500;
+    }
+  }
+}

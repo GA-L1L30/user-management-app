@@ -1,0 +1,29 @@
+<div class="home-page-container">
+  <div class="main-content">
+    <div class="side-column">
+      <app-side-info/>
+    </div>
+    <div class="center-column">
+      <div class="header-seccion">
+        <app-navbar/>
+        <ng-container *ngIf="!selectedUser()">
+          <app-sub-header-info-cards [customStyle]="{
+        paddingTop: '32px',
+        paddingBottom: '70px'
+      }">
+          </app-sub-header-info-cards>
+        </ng-container>
+      </div>
+      <ng-container *ngIf="!selectedUser()">
+        <div class="table-scroll-wrapper">
+          <app-user-list (userSelected)="showUserDetail($event)"/>
+        </div>
+      </ng-container>
+      <ng-container *ngIf="selectedUser()">
+        <app-user-detail [user]="selectedUser()" (goBack)="clearUserDetail()" [customStyle]="{
+        paddingTop: '32px',
+      }"/>
+      </ng-container>
+    </div>
+  </div>
+</div>

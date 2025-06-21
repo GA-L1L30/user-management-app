@@ -1,0 +1,28 @@
+.user-card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+
+  .title, .sub-title {
+    color: #414042;
+    font-family: Roboto;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  .title {
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 36px;
+    letter-spacing: 0;
+  }
+
+  .sub-title {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.5px;
+  }
+}

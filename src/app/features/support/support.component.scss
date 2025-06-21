@@ -1,0 +1,13 @@
+@use '../../../styles' as *;
+
+.support-container {
+  text-align: center;
+  font-family: Nunito;
+  font-weight: 750;
+  font-size: 40px;
+  line-height: 100%;
+  letter-spacing: 0;
+  text-align: center;
+  color: $base-dark-Blue-1;
+  padding-bottom: 11px;
+}

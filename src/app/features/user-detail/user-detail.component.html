@@ -1,0 +1,79 @@
+<div class="detail-view-container" *ngIf="user" [ngClass]="customClass" [ngStyle]="customStyle">
+  <App-background-card [customStyle]="{ width: '1396px', height: '140px' }">
+    <div class="user-profile-header">
+      <img [src]="user.picture.large" alt="User Avatar" class="avatar"/>
+      <div class="user-info">
+        <h1 class="user-name">{{ user.name.first }} {{ user.name.last }}</h1>
+        <p class="user-description">Cat enthusiast & full-time feline cuddler. 🐾</p>
+      </div>
+    </div>
+  </App-background-card>
+  <div class="info-container">
+    <div class="first-column">
+      <div>
+        <label>Email</label>
+        <App-background-card [customStyle]="{ height: '52px' }">
+          <div class="detail-item">
+            <div class="detail-value">{{ user.email }}</div>
+          </div>
+        </App-background-card>
+      </div>
+      <div>
+        <label>Birth Date</label>
+        <App-background-card [customStyle]="{ height: '52px' }">
+          <div class="detail-item">
+            <div class="detail-value">{{ user.dob.date | date:'longDate' }}</div>
+          </div>
+        </App-background-card>
+      </div>
+    </div>
+    <div class="second-column">
+      <div>
+        <label>Address</label>
+        <App-background-card [customStyle]="{ height: '52px' }">
+          <div class="detail-item">
+            <div class="detail-value">{{ user.location.street.number }} {{ user.location.street.name }}
+              , {{ user.location.city }}, DC {{ user.location.postcode }}
+            </div>
+          </div>
+        </App-background-card>
+      </div>
+      <div>
+        <label>Phone Number</label>
+        <App-background-card [customStyle]="{ height: '52px' }">
+          <div class="detail-item">
+            <div class="detail-value with-icon">
+              <span>{{ user.phone }}</span>
+              <span class="arrow-down"></span>
+            </div>
+          </div>
+        </App-background-card>
+      </div>
+    </div>
+  </div>
+  <div class="my-cats-section">
+
+    <h2>My cats</h2>
+    <div class="cats-gallery">
+      <div class="cat-card" *ngFor="let cat of cats; let i = index">
+        <img
+          [src]="'/images/gato_' + (i+1) + '.png'"
+          alt="LogoGato"
+          class="cat-image"
+        />
+        <p class="cat-name">{{ cat.name }}</p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="buttons-section">
+    <div class="actions" (click)="goBack.emit()">
+      <button class="add-friend-btn">Back</button>
+    </div>
+
+    <div class="actions">
+      <button class="add-friend-btn">+ Add Cat Lover Friend</button>
+    </div>
+  </div>
+</div>

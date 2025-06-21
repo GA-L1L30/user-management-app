@@ -1,0 +1,118 @@
+<div class="user-list-container">
+
+  @if (!loading()) {
+    <div class="header-class">
+      <app-header
+        [searchTerm]="searchTerm"
+        (searchTermChange)="searchTerm = $event"
+        [dateFrom]="dateFrom"
+        (dateFromChange)="dateFrom = $event"
+        [dateTo]="dateTo"
+        (dateToChange)="dateTo = $event"
+        (search)="onSearch()"
+      />
+    </div>
+    <table mat-table [dataSource]="users()" class="mat-elevation-z8">
+      <ng-container matColumnDef="#">
+        <th mat-header-cell *matHeaderCellDef>
+          #
+          <mat-icon class="sort-icon" fontIcon="unfold_more"></mat-icon>
+        </th>
+        <td mat-cell *matCellDef="let user; let i = index">
+          <div class="full-name-container">
+            {{ i + 1 }}
+          </div>
+        </td>
+      </ng-container>
+
+
+      <ng-container matColumnDef="Full Name">
+        <th mat-header-cell *matHeaderCellDef>
+          Full Name
+          <mat-icon class="sort-icon" fontIcon="unfold_more"></mat-icon>
+        </th>
+        <td mat-cell *matCellDef="let user">
+          <div class="full-name-container">
+            <img [src]="user.picture.thumbnail" alt="user image" class="user-thumbnail"/>
+            {{ user.name.first }} {{ user.name.last }}
+          </div>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Email">
+        <th mat-header-cell *matHeaderCellDef>
+          Email
+          <mat-icon class="sort-icon" fontIcon="unfold_more"></mat-icon>
+        </th>
+        <td mat-cell *matCellDef="let user">
+          {{ user.email }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Address">
+        <th mat-header-cell *matHeaderCellDef>
+          Address
+          <mat-icon class="sort-icon" fontIcon="unfold_more"></mat-icon>
+        </th>
+        <td mat-cell *matCellDef="let user">
+          {{ user.location.street.name }} {{ user.location.street.number }}, {{ user.location.country }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Phone Number">
+        <th mat-header-cell *matHeaderCellDef>
+          Phone Number
+          <mat-icon class="sort-icon" fontIcon="unfold_more"></mat-icon>
+        </th>
+        <td mat-cell *matCellDef="let user">
+          {{ user.phone }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Birth Date">
+        <th mat-header-cell *matHeaderCellDef>
+          Birth Date
+          <mat-icon class="sort-icon" fontIcon="unfold_more"></mat-icon>
+        </th>
+        <td mat-cell *matCellDef="let user">
+          {{ user.dob.date | date }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Actions">
+        <th mat-header-cell *matHeaderCellDef>
+          Actions
+          <mat-icon class="sort-icon" fontIcon="unfold_more"></mat-icon>
+        </th>
+        <td mat-cell *matCellDef="let user">
+          <button mat-raised-button color="primary" class="view-button" (click)="viewUserDetail(user)">
+            <span class="view-content">
+              <img src="/images/icono_preview.png" alt="preview icon" class="preview-icon"/>
+              View
+            </span>
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="viewUserDetail(row)"
+          class="clickable-row"></tr>
+    </table>
+    <app-footer-paginator
+      [resultsPerPage]="resultsPerPage"
+      (resultsPerPageChange)="setRowsPerPage($event)"
+      [rowsPerPageOptions]="rowsPerPageOptions"
+      [totalRows]="totalRows"
+      [currentPage]="currentPage()"
+      [totalPages]="totalPages"
+      [visiblePages]="visiblePages"
+      (goToFirstPage)="goToFirstPage()"
+      (previousPage)="previousPage()"
+      (goToPage)="goToPage($event)"
+      (nextPage)="nextPage()"
+      (goToLastPage)="goToLastPage()"
+    />
+  } @else {
+    <app-spinner></app-spinner>
+  }
+</div>
