@@ -1,7 +1,7 @@
 import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import {NgIf, NgFor, DatePipe, NgClass, NgStyle} from '@angular/common';
 import {BackgroundCardComponent} from '../../shared/components/background-card/background-card.component';
-import {MatCard} from '@angular/material/card';
+import {UserService} from '../../core/services/user.service';
 
 @Component({
   selector: 'app-user-detail',
@@ -36,9 +36,13 @@ export class UserDetailComponent implements OnInit {
 
   @Output() goBack = new EventEmitter<unknown>();
 
-  constructor() {
+  constructor(private userService: UserService) {
   }
 
   ngOnInit() {
+  }
+
+  simulateAuthError() {
+    this.userService.testInterceptor();
   }
 }

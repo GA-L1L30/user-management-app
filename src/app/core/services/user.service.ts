@@ -1,6 +1,6 @@
 import {Injectable, signal, computed} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import { environment } from '../../../environments/environment';
+import {environment} from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -29,4 +29,10 @@ export class UserService {
       })
   }
 
+  testInterceptor() {
+    return this.http.get(`${environment.API_URL}/protected`).subscribe({
+      next: (response) => console.log(response),
+      error: (error) => console.log('Test error : ', error)
+    });
+  }
 }
