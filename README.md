@@ -4,6 +4,9 @@ This project is a user management application built with Angular. It provides a 
 
 ## Demo
 
+Test Resolution(1920x1080)
+
+
 A video demonstration of the application is available here:
 [https://drive.google.com/file/d/1qzzxyCl-xrwwniJFkX-lFJWOOasoeb8m/view?usp=sharing](https://drive.google.com/file/d/1qzzxyCl-xrwwniJFkX-lFJWOOasoeb8m/view?usp=sharing) (public access)
 
@@ -65,3 +68,4 @@ Several features were implemented to enhance the application:
   * `capitalize.pipe.ts`: A pipe to capitalize text.
   * `compact-number.pipe.ts`: A pipe to format large numbers into a compact, readable format (e.g., 1K, 1M).
 * **Go Back Navigation**: The user detail view includes a "Go Back" functionality to easily navigate back to the user list.
+

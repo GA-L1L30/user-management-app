@@ -1,5 +1,6 @@
 import {Injectable, signal, computed} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +17,7 @@ export class UserService {
 
   getUsers(page: number, resultsPerPage: number) {
     this._loading.set(true);
-    this.http.get<any>(`https://randomuser.me/api/?page=${page}&results=${resultsPerPage}`)
+    this.http.get<any>(`${environment.API_URL}/?page=${page}&results=${resultsPerPage}`)
       .subscribe({
         next: (next: any) => {
           this._users.set(next.results);
